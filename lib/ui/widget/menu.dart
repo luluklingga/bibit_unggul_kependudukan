@@ -17,7 +17,19 @@ class Menu extends StatelessWidget {
             style: Theme.of(context).textTheme.subtitle1!.copyWith(
                 color: Palette.onBackground, fontWeight: FontWeight.bold),
           ),
-          MenuCard()
+          SizedBox(
+            height: 15,
+          ),
+          MenuCard(
+            iconData: Icons.medical_services,
+            title: "Kesehatan",
+            iconColor: Palette.kesehatanColor,
+          ),
+          MenuCard(
+            iconData: Icons.accessibility,
+            title: "Kesejahteraan",
+            iconColor: Palette.kesejahteraanColor,
+          )
         ],
       ),
     );

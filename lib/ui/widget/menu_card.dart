@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:kependudukan/theme/palette.dart';
 
 class MenuCard extends StatelessWidget {
-  const MenuCard({Key? key}) : super(key: key);
+  final IconData iconData;
+  final String title;
+  final Color iconColor;
+  const MenuCard(
+      {Key? key,
+      required this.iconData,
+      required this.title,
+      required this.iconColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +25,16 @@ class MenuCard extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 24,
-              backgroundColor: Palette.kesehatanColor,
-              child: Icon(Icons.ac_unit),
+              backgroundColor: iconColor.withOpacity(0.2),
+              child: Icon(
+                iconData,
+                color: iconColor,
+              ),
             ),
             SizedBox(
               width: 5,
             ),
-            Text("Kesehatan"),
+            Text(title),
           ],
         ),
       ),
